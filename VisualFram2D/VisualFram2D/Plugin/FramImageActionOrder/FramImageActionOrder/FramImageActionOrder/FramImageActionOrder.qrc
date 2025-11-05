@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramImageActionOrder">
+        <file>Image/actionOrder.png</file>
+    </qresource>
+</RCC>

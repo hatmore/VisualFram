@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/FramExternalDeviceWrite">
+        <file>Image/write.png</file>
+        <file>Resources/default_style.xml</file>
+        <file>Resources/drakula.xml</file>
+    </qresource>
+</RCC>

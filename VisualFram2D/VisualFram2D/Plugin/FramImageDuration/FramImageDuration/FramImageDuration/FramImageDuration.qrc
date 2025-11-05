@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramImageDuration">
+        <file>Image/filter.png</file>
+    </qresource>
+</RCC>

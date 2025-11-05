@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramImageShow">
+        <file>Image/ImageShow.png</file>
+    </qresource>
+</RCC>

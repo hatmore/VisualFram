@@ -1,0 +1,322 @@
+已启动重新生成…
+1>------ 已启动全部重新生成: 项目: MianWindows (MianWindows\MianWindows), 配置: Debug x64 ------
+1>D:\vs2019download\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+1> Qt/MSBuild: 3.4.1.0
+1>Reading Qt configuration (D:/qt/5.14.2/msvc2017_64/bin/qmake)
+1> Qt: 5.14.2
+1>uic CameraDevice\FramCameraLogin.ui
+1>uic CameraDevice\FramCameraSetParam.ui
+1>uic CommunicateDevice\FramCommunicateDevice.ui
+1>uic DragTreeWidget\FramToolsTree.ui
+1>uic GraphicsViewWidget\FramTaskFlowViewWidget.ui
+1>uic ImageView\FramImageLayout.ui
+1>uic ImageView\FramImageView.ui
+1>uic Log\frmLog.ui
+1>uic MianWindows.ui
+1>uic RemoteOperation\FramRemoteOperationEvents.ui
+1>uic SystemParamSetUp\FramSoftRegister.ui
+1>uic SystemParamSetUp\FramSystemSetUp.ui
+1>uic SystemParamSetUp\FramUserLogin.ui
+1>uic TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.ui
+1>rcc MianWindows.qrc
+1>moc MianWindows.h
+1>moc DragTreeWidget\FramToolsTree.h
+1>moc DragTreeWidget\DragTreeWidget.h
+1>moc PlugiManager\PluginsManager.h
+1>moc GraphicsViewWidget\FramTaskFlowViewWidget.h
+1>moc GraphicsViewWidget\GraphicsViewTaskFlowWidget.h
+1>moc Toolnterface\ToolNodeDataInteract.h
+1>moc AutoRunOperation\AutoGetAndRanderVideoStream.h
+1>moc AutoRunOperation\AutoSignalTriggerFlowsExeThread.h
+1>moc AutoRunOperation\AutoFlowsLogInfoShowThread.h
+1>moc AutoRunOperation\AutoCommunicationDeviceWriteThread.h
+1>moc AutoRunOperation\AutoFlowsExeThread.h
+1>moc AutoRunOperation\AutoSOPReportShowThread.h
+1>moc CameraDevice\FramCameraLogin.h
+1>moc CameraDevice\FramCameraSetParam.h
+1>moc CommunicateDevice\FramCommunicateDevice.h
+1>moc CommunicateDevice\BaseCommunicateDevice.h
+1>moc CommunicateDevice\IpAddress.h
+1>moc CommunicateDevice\SocketTcpServerCommunicate.h
+1>moc CommunicateDevice\SimensS7ServerCommunication.h
+1>moc CommunicateDevice\SimensS7ClientCommunication.h
+1>moc ImageView\FramImageLayout.h
+1>moc ImageView\FramImageView.h
+1>moc ImageView\QGraphicsViews.h
+1>moc RemoteOperation\FramRemoteOperationEvents.h
+1>moc Other\ShowCpuMemory.h
+1>moc GoodMainWindow.h
+1>moc SystemParamSetUp\FramSoftRegister.h
+1>moc SystemParamSetUp\FramSystemSetUp.h
+1>moc SystemParamSetUp\FramUserLogin.h
+1>moc Toolnterface\ToolInterface.h
+1> D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GoodMainWindow.h(0): Note: No relevant classes found. No output generated.
+1>moc Toolnterface\InterfacePlugin.h
+1>moc TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h
+1>moc Log\savelog.h
+1>moc Log\frmLog.h
+1>moc Log\clogmodel.h
+1>moc NodeEditor\OverrideDataFlowGraphModel.h
+1>moc NodeEditor\OverrideDataFlowGraphicsScene.h
+1>moc NodeEditor\NodeEmbedWidget.h
+1>moc NodeEditor\GraphicsViewOverride.h
+1>moc NodeEditor\BaseNodeModel.h
+1>AutoCommunicationDeviceWriteThread.cpp
+1>AutoFlowsExeThread.cpp
+1>AutoFlowsLogInfoShowThread.cpp
+1>AutoGetAndRanderVideoStream.cpp
+1>AutoSignalTriggerFlowsExeThread.cpp
+1>AutoSOPReportShowThread.cpp
+1>FramCameraLogin.cpp
+1>FramCameraSetParam.cpp
+1>HCNetCamera.cpp
+1>VirtualCamera.cpp
+1>FramCommunicateDevice.cpp
+1>IpAddress.cpp
+1>SimensS7ClientCommunication.cpp
+1>SimensS7ServerCommunication.cpp
+1>snap7.cpp
+1>SocketTcpServerCommunicate.cpp
+1>GoodMainWindow.cpp
+1>FramTaskFlowViewWidget.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoGetAndRanderVideoStream.cpp)
+1>GraphicsViewTaskFlowWidget.cpp
+1>FramImageLayout.cpp
+1>FramImageView.cpp
+1>QGraphicsViews.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSignalTriggerFlowsExeThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>clogmodel.cpp
+1>frmLog.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSOPReportShowThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\HCNetCamera.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\VirtualCamera.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\VirtualCamera.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\VirtualCamera.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 GraphicsViewWidget\FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 GraphicsViewWidget\GraphicsViewTaskFlowWidget.cpp)
+1>savelog.cpp
+1>GraphicsViewDrapEvent.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\HCNet\inlcude\HCNetSDK.h(41172,1): warning C4010: 单行注释包含行继续符 (编译源文件 CameraDevice\HCNetCamera.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\VirtualCamera.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\FramCameraLogin.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 GraphicsViewWidget\FramTaskFlowViewWidget.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoGetAndRanderVideoStream.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>GraphicsViewOverride.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\HCNetCamera.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>The contents of <latch> are available only with C++20 or later.
+1>NodeEmbedWidget.cpp
+1>OverrideDataFlowGraphicsScene.cpp
+1>OverrideDataFlowGraphModel.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 GraphicsViewWidget\FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 GraphicsViewWidget\GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 AutoRunOperation\AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSOPReportShowThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoFlowsLogInfoShowThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoCommunicationDeviceWriteThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ImageView\FramImageView.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\FramCameraSetParam.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.cpp(145,112): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.cpp(148,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.cpp(154,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.cpp(157,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\ImageView\FramImageView.cpp(33,47): warning C4267: “参数”: 从“size_t”转换到“const int”，可能丢失数据
+1>FolderOperation.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoGetAndRanderVideoStream.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\VirtualCamera.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\FramCameraSetParam.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\FramCameraSetParam.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CommunicateDevice\FramCommunicateDevice.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.cpp(46,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.cpp(46,10): message : 请考虑在格式字符串中使用“%lld”
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.cpp(46,10): message : 请考虑在格式字符串中使用“%Id”
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\HCNetCamera.cpp(46,10): message : 请考虑在格式字符串中使用“%I64d”
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.cpp(214,112): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.cpp(217,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.cpp(223,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.cpp(226,108): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.cpp(259,152): warning C4267: “参数”: 从“size_t”转换到“_Tp”，可能丢失数据
+1>        with
+1>        [
+1>            _Tp=int
+1>        ]
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 NodeEditor\GraphicsViewDrapEvent.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 NodeEditor\GraphicsViewDrapEvent.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\HCNet\inlcude\HCNetSDK.h(41172,1): warning C4010: 单行注释包含行继续符 (编译源文件 CameraDevice\FramCameraSetParam.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 AutoRunOperation\AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 GraphicsViewWidget\GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 GraphicsViewWidget\GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\VirtualCamera.cpp(107): warning C4715: “VirtualCamera::SaveVideoImage”: 不是所有的控件路径都返回值
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 CameraDevice\FramCameraSetParam.cpp)
+1>ShowCpuMemory.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 GraphicsViewWidget\FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 GraphicsViewWidget\FramTaskFlowViewWidget.cpp)
+1>PluginsManager.cpp
+1>CommunicateDevicePythonEngine.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>PythonEngine.cpp
+1>FramRemoteOperationEvents.cpp
+1>StaticGlobalVariable.cpp
+1>FramSoftRegister.cpp
+1>FramSystemSetUp.cpp
+1>FramUserLogin.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 NodeEditor\GraphicsViewOverride.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 NodeEditor\GraphicsViewOverride.cpp)
+1>ToolNodeDataInteract.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Toolnterface\ToolNodeDataInteract.cpp)
+1>FramTreeWidgetTaskFlowAndProject.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 NodeEditor\OverrideDataFlowGraphicsScene.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 NodeEditor\OverrideDataFlowGraphicsScene.cpp)
+1>FramToolsTree.cpp
+1>DragTreeWidget.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 NodeEditor\OverrideDataFlowGraphModel.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 NodeEditor\OverrideDataFlowGraphModel.cpp)
+1>MianWindows.cpp
+1>main.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 AutoRunOperation\AutoSignalTriggerFlowsExeThread.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 StaticGlobalVariable.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 RemoteOperation\FramRemoteOperationEvents.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 RemoteOperation\FramRemoteOperationEvents.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 SystemParamSetUp\FramSystemSetUp.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 SystemParamSetUp\FramUserLogin.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 RemoteOperation\FramRemoteOperationEvents.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 RemoteOperation\FramRemoteOperationEvents.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 RemoteOperation\FramRemoteOperationEvents.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\RemoteOperation\FramRemoteOperationEvents.cpp(378,74): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSignalTriggerFlowsExeThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSignalTriggerFlowsExeThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 main.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\MianWindows.cpp(231): warning C4715: “<lambda_8f45b9a6048b7d244692aa86071e6a59>::operator()”: 不是所有的控件路径都返回值
+1>qrc_MianWindows.cpp
+1>moc_MianWindows.cpp
+1>moc_FramToolsTree.cpp
+1>moc_DragTreeWidget.cpp
+1>moc_PluginsManager.cpp
+1>moc_FramTaskFlowViewWidget.cpp
+1>moc_GraphicsViewTaskFlowWidget.cpp
+1>moc_ToolNodeDataInteract.cpp
+1>moc_AutoGetAndRanderVideoStream.cpp
+1>moc_AutoSignalTriggerFlowsExeThread.cpp
+1>moc_AutoFlowsLogInfoShowThread.cpp
+1>moc_AutoCommunicationDeviceWriteThread.cpp
+1>moc_AutoFlowsExeThread.cpp
+1>moc_AutoSOPReportShowThread.cpp
+1>moc_FramCameraLogin.cpp
+1>moc_FramCameraSetParam.cpp
+1>moc_FramCommunicateDevice.cpp
+1>moc_BaseCommunicateDevice.cpp
+1>moc_IpAddress.cpp
+1>moc_SocketTcpServerCommunicate.cpp
+1>moc_SimensS7ServerCommunication.cpp
+1>moc_SimensS7ClientCommunication.cpp
+1>moc_FramImageLayout.cpp
+1>moc_FramImageView.cpp
+1>moc_QGraphicsViews.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSignalTriggerFlowsExeThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoSOPReportShowThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoGetAndRanderVideoStream.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_ToolNodeDataInteract.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramCameraLogin.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>The contents of <latch> are available only with C++20 or later.
+1>moc_FramRemoteOperationEvents.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoGetAndRanderVideoStream.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoFlowsExeThread.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>moc_ShowCpuMemory.cpp
+1>The contents of <latch> are available only with C++20 or later.
+1>moc_GoodMainWindow.cpp
+1>moc_FramSoftRegister.cpp
+1>moc_FramSystemSetUp.cpp
+1>moc_FramUserLogin.cpp
+1>moc_ToolInterface.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramCameraSetParam.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_ToolInterface.cpp)
+1>moc_InterfacePlugin.cpp
+1>moc_FramTreeWidgetTaskFlowAndProject.cpp
+1>moc_savelog.cpp
+1>moc_frmLog.cpp
+1>moc_clogmodel.cpp
+1>moc_OverrideDataFlowGraphModel.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\TreeTaskFlowAndProject\FramTreeWidgetTaskFlowAndProject.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_GraphicsViewTaskFlowWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTaskFlowViewWidget.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_AutoSignalTriggerFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoSignalTriggerFlowsExeThread.cpp)
+1>moc_OverrideDataFlowGraphicsScene.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_AutoFlowsExeThread.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>moc_NodeEmbedWidget.cpp
+1>moc_GraphicsViewOverride.cpp
+1>moc_BaseNodeModel.cpp
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\CameraDevice\CameraStruct.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoGetAndRanderVideoStream.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSignalTriggerFlowsExeThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\FramTaskFlowViewWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\GraphicsViewWidget\GraphicsViewTaskFlowWidget.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>The contents of <latch> are available only with C++20 or later.
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\Taskflow\core\executor.hpp(1179,51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\AutoRunOperation\AutoSOPReportShowThread.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_MianWindows.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_OverrideDataFlowGraphModel.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_OverrideDataFlowGraphModel.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_OverrideDataFlowGraphicsScene.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_OverrideDataFlowGraphicsScene.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_BaseNodeModel.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_BaseNodeModel.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\NodeEditor\BaseNodeData.h(4,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\MianWindows\MianWindows\Toolnterface\ToolNodeDataInteract.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 x64\Debug\qt\moc\moc_FramTreeWidgetTaskFlowAndProject.cpp)
+1>LINK : fatal error LNK1104: 无法打开文件“snap7.lib”
+1>已完成生成项目“MianWindows.vcxproj”的操作 - 失败。
+========== 全部重新生成: 成功 0 个，失败 1 个，跳过 0 个 ==========

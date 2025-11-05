@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramImageMaskFilter">
+        <file>Image/ImageMaskFilter.png</file>
+    </qresource>
+</RCC>

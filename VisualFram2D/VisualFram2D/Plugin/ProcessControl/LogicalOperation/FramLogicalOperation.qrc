@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramLogicalOperation">
+        <file>Image/LogicalOperation.png</file>
+    </qresource>
+</RCC>

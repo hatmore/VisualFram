@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramPoseC3D">
+        <file>Image/iconRecognation.png</file>
+    </qresource>
+</RCC>

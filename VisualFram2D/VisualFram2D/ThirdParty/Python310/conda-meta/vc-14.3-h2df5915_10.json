@@ -1,0 +1,35 @@
+{
+  "build": "h2df5915_10",
+  "build_number": 10,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "vc14_runtime >=14.42.34433"
+  ],
+  "extracted_package_dir": "D:\\ProgramData\\Anaconda3\\pkgs\\vc-14.3-h2df5915_10",
+  "features": "",
+  "files": [],
+  "fn": "vc-14.3-h2df5915_10.conda",
+  "legacy_bz2_md5": "08ec0826da418be406f48b6c8c26b0ff",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "D:\\ProgramData\\Anaconda3\\pkgs\\vc-14.3-h2df5915_10",
+    "type": 1
+  },
+  "md5": "064c529f6f598fb2225446f76687a170",
+  "name": "vc",
+  "package_tarball_full_path": "D:\\ProgramData\\Anaconda3\\pkgs\\vc-14.3-h2df5915_10.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "d427b27e553a5caa78284a995ff9c3720b0f213a0e650fe9d3b54b4b4a65f241",
+  "size": 19506,
+  "subdir": "win-64",
+  "timestamp": 1752199946483,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/vc-14.3-h2df5915_10.conda",
+  "version": "14.3"
+}

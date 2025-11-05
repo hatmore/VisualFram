@@ -1,0 +1,39 @@
+{
+	"Devices":	[{
+			"ID":	0,
+			"SerialNumber":	"DS-2CD3386FWDV3-LS20241229AACHFV0821463",
+			"ChannelNumber":	1,
+			"StartChannel":	1,
+			"AlarmInNum":	1,
+			"AlarmOutNum":	1,
+			"IPChanNum":	0,
+			"MirrorChanNum":	0,
+			"StartMirrorChanNo":	0,
+			"LocalNodeName":	"111",
+			"DeviceType":	31,
+			"DiskNum":	0,
+			"LoginUserName":	"admin",
+			"LoginUserPwd":	"jee12345$",
+			"DeviceIP":	"192.168.250.64",
+			"DeviceMultiIP":	"0.0.0.0",
+			"DevicePort":	8000,
+			"DeviceName":	"",
+			"LoginMode":	0,
+			"Https":	0,
+			"Channels":	[{
+					"ChanID":	0,
+					"DeviceIndex":	0,
+					"ChanIndex":	0,
+					"ChanName":	"Camera1",
+					"Protocol":	0,
+					"PicResolution":	0,
+					"PicQuality":	0,
+					"Enable":	1,
+					"PreviewMode":	0,
+					"PreviewProtocolType":	0,
+					"VideoCodingType":	0,
+					"StreamType":	0,
+					"LinkMode":	0
+				}]
+		}]
+}

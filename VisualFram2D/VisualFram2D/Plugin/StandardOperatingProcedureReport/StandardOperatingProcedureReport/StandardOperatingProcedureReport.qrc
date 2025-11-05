@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/FramStandardOperatingProcedureReport">
+        <file>Image/SOP.png</file>
+        <file>Resources/default_style.xml</file>
+        <file>Resources/drakula.xml</file>
+    </qresource>
+</RCC>

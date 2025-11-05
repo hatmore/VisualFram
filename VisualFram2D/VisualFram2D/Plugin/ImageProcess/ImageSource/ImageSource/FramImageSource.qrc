@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/FramImageSource">
+        <file>Image/Camera.png</file>
+        <file>Image/DLCW.png</file>
+        <file>Image/DLCW2.png</file>
+    </qresource>
+</RCC>

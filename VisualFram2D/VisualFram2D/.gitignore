@@ -1,0 +1,57 @@
+# Build directories
+Build/
+x64/
+x86/
+Debug/
+Release/
+
+# Visual Studio files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs/
+
+# Qt generated files
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+.qmake.stash
+Makefile
+
+# Object and library files
+*.o
+*.a
+*.lib
+*.dll
+*.exe
+*.out
+*.app
+*.so
+*.dylib
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+*.user
+
+# IDE
+.vscode/
+.idea/
+*.pro.user
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
+.gitkeep
+
+# Dependencies (optional - comment out if you want to track them)
+# ThirdParty/

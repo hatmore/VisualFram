@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramExternalDeviceRead">
+        <file>Image/read.png</file>
+    </qresource>
+</RCC>

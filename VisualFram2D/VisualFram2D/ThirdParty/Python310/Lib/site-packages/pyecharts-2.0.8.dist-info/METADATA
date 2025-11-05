@@ -1,0 +1,45 @@
+Metadata-Version: 2.2
+Name: pyecharts
+Version: 2.0.8
+Summary: Python options, make charting easier
+Home-page: https://github.com/pyecharts/pyecharts
+Author: chenjiandongx
+Author-email: chenjiandongx@qq.com
+License: MIT
+Keywords: Echarts,charts,plotting-tool
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries
+License-File: LICENSE
+Requires-Dist: jinja2
+Requires-Dist: prettytable
+Requires-Dist: simplejson
+Provides-Extra: selenium
+Requires-Dist: snapshot-selenium; extra == "selenium"
+Provides-Extra: phantomjs
+Requires-Dist: snapshot-phantomjs; extra == "phantomjs"
+Provides-Extra: pyppeteer
+Requires-Dist: snapshot-pyppeteer; extra == "pyppeteer"
+Provides-Extra: images
+Requires-Dist: PIL; extra == "images"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

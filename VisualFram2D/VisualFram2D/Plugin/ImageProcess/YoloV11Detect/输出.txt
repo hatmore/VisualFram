@@ -1,0 +1,83 @@
+已启动重新生成…
+1>------ 已启动全部重新生成: 项目: YoloV11Detect, 配置: Debug x64 ------
+1>D:\vs2019download\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+1>Compiling CUDA source file YoloV11Src\postprocess.cu...
+1>Compiling CUDA source file YoloV11Src\preprocess.cu...
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\vs2019download\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\x64\Debug\qt\uic -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2 -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\TensorRT-8.6.0.12\include" -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\oneapi-tbb-2021.12.0\include\oneapi" -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\oneapi-tbb-2021.12.0\include\tbb" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\QtNodes\include -ID:\vs2019download\VC\Tools\MSVC\14.29.30133\include -ID:\vs2019download\VC\Tools\MSVC\14.29.30133\atlmfc\include -ID:\vs2019download\VC\Auxiliary\VS\include -I"D:\Windows Kits\10\Include\10.0.19041.0\ucrt" -ID:\vs2019download\VC\Auxiliary\VS\UnitTest\include -I"D:\Windows Kits\10\Include\10.0.19041.0\um" -I"D:\Windows Kits\10\Include\10.0.19041.0\shared" -I"D:\Windows Kits\10\Include\10.0.19041.0\winrt" -I"D:\Windows Kits\10\Include\10.0.19041.0\cppwinrt" -IInclude\um -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -D_WINDOWS -DNODE_EDITOR_SHARED -DQT_CORE_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -D"CMAKE_INTDIR=\"Debug\"" -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\x64\Debug\postprocess.cu.obj "D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\postprocess.cu"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\vs2019download\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\x64\Debug\qt\uic -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2 -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\TensorRT-8.6.0.12\include" -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\oneapi-tbb-2021.12.0\include\oneapi" -I"D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\oneapi-tbb-2021.12.0\include\tbb" -ID:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\QtNodes\include -ID:\vs2019download\VC\Tools\MSVC\14.29.30133\include -ID:\vs2019download\VC\Tools\MSVC\14.29.30133\atlmfc\include -ID:\vs2019download\VC\Auxiliary\VS\include -I"D:\Windows Kits\10\Include\10.0.19041.0\ucrt" -ID:\vs2019download\VC\Auxiliary\VS\UnitTest\include -I"D:\Windows Kits\10\Include\10.0.19041.0\um" -I"D:\Windows Kits\10\Include\10.0.19041.0\shared" -I"D:\Windows Kits\10\Include\10.0.19041.0\winrt" -I"D:\Windows Kits\10\Include\10.0.19041.0\cppwinrt" -IInclude\um -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -D_WINDOWS -DNODE_EDITOR_SHARED -DQT_CORE_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -D"CMAKE_INTDIR=\"Debug\"" -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\x64\Debug\preprocess.cu.obj "D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\preprocess.cu"
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\config.h(1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::buildMaps" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::warp" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::buildMaps" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::warp" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(100): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::FeatherBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(127): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::MultiBandBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(100): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::FeatherBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(127): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::MultiBandBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\config.h(1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::buildMaps" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::warp" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::buildMaps" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/warpers.hpp(235): warning #611-D: overloaded virtual function "cv::detail::PlaneWarper::warp" is only partially overridden in class "cv::detail::AffineWarper"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(100): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::FeatherBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(127): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::MultiBandBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(100): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::FeatherBlender"
+1>
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\ThirdParty\opencv4.5.4\build\include\opencv2/stitching/detail/blenders.hpp(127): warning #611-D: overloaded virtual function "cv::detail::Blender::prepare" is only partially overridden in class "cv::detail::MultiBandBlender"
+1>
+1>preprocess.cu
+1>postprocess.cu
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\postprocess.h(29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\postprocess.h(30): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+1>已完成生成项目“YoloV11Detect.vcxproj”的操作。
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\preprocess.cu(114): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\preprocess.cu(115): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\preprocess.cu(118): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+1>D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\YoloV11Src\preprocess.cu(123): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+1>已完成生成项目“YoloV11Detect.vcxproj”的操作。
+1> Qt/MSBuild: 3.4.1.0
+1>Reading Qt configuration (D:/qt/5.14.2/msvc2017_64/bin/qmake)
+1> Qt: 5.14.2
+1>uic FramYoloV11Detect.ui
+1>rcc FramYoloV11Detect.qrc
+1>moc FramYoloV11Detect.h
+1>moc ImageView\BaseItem.h
+1>moc ImageView\ControlItem.h
+1>moc ImageView\ImageItem.h
+1>moc ImageView\QGraphicsScenes.h
+1>moc ImageView\QGraphicsViews2d.h
+1>moc NodeEditor\BaseNodeData.h
+1>moc NodeEditor\BaseNodeModel.h
+1>moc NodeEditor\NodeEmbedWidget.h
+1>moc Toolnterface\InterfacePlugin.h
+1>moc Toolnterface\ToolInterface.h
+1>moc Toolnterface\ToolNodeDataInteract.h
+1>moc YoloV11DetectNodeModel.h
+1>moc YoloV11DetectInterface.h
+1> D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\FramYoloV11Detect.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1> D:\VisualFram2.0II\VisualFram2D\VisualFram2D\Plugin\ImageProcess\YoloV11Detect\YoloV11Detect\NodeEditor\BaseNodeData.h(0): Note: No relevant classes found. No output generated.
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1> :/VisualFram2.0II/VisualFram2D/VisualFram2D/ThirdParty/oneapi-tbb-2021.12.0/include/oneapi/tbb/profiling.(29): Parse error at "{"
+1>C:\Users\user\AppData\Local\QtMsBuild\qt_work.targets(136,5): error MSB4181: “QtRunWork”任务返回了 false，但未记录错误。
+1>已完成生成项目“YoloV11Detect.vcxproj”的操作 - 失败。
+========== 全部重新生成: 成功 0 个，失败 1 个，跳过 0 个 ==========

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/ImageROISelection">
+        <file>Image/region.png</file>
+    </qresource>
+</RCC>

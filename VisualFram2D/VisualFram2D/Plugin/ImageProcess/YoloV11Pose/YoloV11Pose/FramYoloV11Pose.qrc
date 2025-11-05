@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramYoloV11Pose">
+        <file>Image/YoloPose.png</file>
+    </qresource>
+</RCC>

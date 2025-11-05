@@ -1,0 +1,62 @@
+# Visual Studio 2019 build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+Build/
+
+# Visual Studio cache/options
+.vs/
+
+# Visual Studio Code cache/options
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.map
+*.exp
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*.opendb
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Windows reserved filenames
+nul

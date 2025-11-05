@@ -1,0 +1,14 @@
+/* 分割条 */
+ads--CSplitter, QSplitter {
+    background: #2A2E32;
+}
+ads--CSplitter::handle, QSplitter::handle {
+    background: #34393E;
+    width: 2px;
+}
+ads--CSplitter::handle:hover, QSplitter::handle:hover {
+    background: #3F454B;
+}
+ads--CSplitter::handle:pressed, QSplitter::handle:pressed {
+    background: #2F5FB5;
+}

@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/MianWindows">
+        <file>Image/BuildFlow.png</file>
+        <file>Image/Cycle.png</file>
+        <file>Image/delete.png</file>
+        <file>Image/NCycle.png</file>
+        <file>Image/Once.png</file>
+        <file>Image/Stop.png</file>
+        <file>Theme/dark.qss</file>
+        <file>Theme/light.qss</file>
+        <file>Theme/origin.qss</file>
+        <file>Image/Hardware.png</file>
+        <file>Image/RemoteOperation.png</file>
+        <file>Image/CanvasSetting.png</file>
+        <file>Image/open.png</file>
+        <file>Image/save.png</file>
+        <file>Image/SaveAs.png</file>
+        <file>Image/Auto1.png</file>
+        <file>Image/Auto2.png</file>
+        <file>Image/communicate.png</file>
+        <file>Image/Setting.png</file>
+        <file>Image/Logo.png</file>
+        <file>Image/Restate.png</file>
+        <file>Image/change.png</file>
+        <file>Image/Close.png</file>
+        <file>Image/Delte.png</file>
+        <file>Image/Flow.png</file>
+        <file>Image/Logo.ico</file>
+        <file>Image/project.png</file>
+        <file>Image/State.png</file>
+        <file>Image/file-open.png</file>
+        <file>Theme/dock.qss</file>
+        <file>Image/log.png</file>
+        <file>Image/Show.png</file>
+        <file>Image/tools.png</file>
+    </qresource>
+</RCC>

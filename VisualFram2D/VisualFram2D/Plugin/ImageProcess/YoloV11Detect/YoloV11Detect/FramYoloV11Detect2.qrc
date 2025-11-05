@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FramYoloV11Detect">
+        <file>Image/YoloDetect.png</file>
+    </qresource>
+</RCC>

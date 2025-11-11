@@ -154,16 +154,18 @@ int FramResultStateJudgment::RunningTool()
         auto rect_map = ptrInNodeDeviceJudgeData->GetCGObjectNodeFlow<VMUnorderedMap<int, PtrVMVector<PtrVMRectangle>>>();
         if (!rect_map) break;
 
-        rect2.x = 819;
-        rect2.y = 410;
-        rect2.width = 907;
-        rect2.height = 700;
+        rect2.x = 1317;
+        rect2.y = 646;
+        rect2.width = 358;
+        rect2.height = 506;
 
-        //测试代码，只针对类别0
-        PtrVMVector<PtrVMRectangle> vmVector = rect_map->vmMap[0];
+        //测试代码，只针对类别1
+        PtrVMVector<PtrVMRectangle> vmVector = rect_map->vmMap[1];
         int count = vmVector->vmVector.size();
         float maxIoU = 0.0;
-        for (size_t i = 0; i < count; i++) {
+
+        // 问题：工件A、B、C同时出现，无法区分是哪个工件到位
+        /*for (size_t i = 0; i < count; i++) {
             PtrVMRectangle rect = vmVector->vmVector[i];
             if (rect->calssId == judgementClassId) {
                 rect1.x = rect->centerPoint.x - rect->width / 2.0f;
@@ -183,6 +185,32 @@ int FramResultStateJudgment::RunningTool()
                     ptrNotOutVMNodeState->nodeState = true;
                 }
             }
+        }*/
+
+        // 只根据最大IoU做一次判断
+        for (size_t i = 0; i < count; i++) {
+            PtrVMRectangle rect = vmVector->vmVector[i];
+            // 只判断类别1(工件1
+            if (rect->calssId == 1) {
+                rect1.x = rect->centerPoint.x - rect->width / 2.0f;
+                rect1.y = rect->centerPoint.y - rect->height / 2.0f;
+                rect1.width = rect->width;
+                rect1.height = rect->height;
+                float calculateIoU = CalculateIoU(rect1, rect2);
+                if (calculateIoU > maxIoU) {
+                    maxIoU = calculateIoU;
+                }
+            }
+        }
+
+        // 循环结束后，根据最大IoU判断
+        if (maxIoU > 0.3) {
+            ptrAndOutVMNodeState->nodeState = true;
+            ptrNotOutVMNodeState->nodeState = false;
+        }
+        else {
+            ptrAndOutVMNodeState->nodeState = false;
+            ptrNotOutVMNodeState->nodeState = true;
         }
 
 

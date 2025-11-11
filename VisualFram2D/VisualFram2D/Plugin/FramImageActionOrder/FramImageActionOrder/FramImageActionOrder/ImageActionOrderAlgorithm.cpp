@@ -1,6 +1,10 @@
 
 #include"ImageActionOrderAlgorithm.h"
 #include <unordered_set>
+#include <QFile>         // 添加
+#include <QTextStream>   // 添加
+#include <QDateTime>     // 添加
+
 
 ImageActionOrderAlgorithm::ImageActionOrderAlgorithm()
 {
@@ -50,14 +54,29 @@ std::vector<ROI>ImageActionOrderAlgorithm::InitRoi(PtrVMUnorderedMap<int, PtrVMV
             VMRectangle vm_rect = vmVector->vmVector[j];
             ROI roi;
             roi.id = vmPair.first; //map的键值：类别
-            roi.area.x = vm_rect.centerPoint.x;
-            roi.area.y = vm_rect.centerPoint.y; // 确认是否需要注释中的代码
-            roi.area.width = vm_rect.width;
-            roi.area.height = vm_rect.height;
+
+            //roi.area.x = vm_rect.centerPoint.x;
+            //roi.area.y = vm_rect.centerPoint.y; // 确认是否需要注释中的代码
+            //roi.area.width = vm_rect.width;
+            //roi.area.height = vm_rect.height;
+            //roi.orderId = vm_rect.orderId;
+            //rois.push_back(roi);
+
+            // 处理负宽高的情况
+            float actualWidth = std::abs(vm_rect.width);
+            float actualHeight = std::abs(vm_rect.height);
+
+            roi.area.x = std::min(vm_rect.centerPoint.x, vm_rect.centerPoint.x + vm_rect.width);
+            roi.area.y = std::min(vm_rect.centerPoint.y, vm_rect.centerPoint.y + vm_rect.height);
+            roi.area.width = actualWidth;
+            roi.area.height = actualHeight;
             roi.orderId = vm_rect.orderId;
             rois.push_back(roi);
+
         }
     }
+
+
     return rois;
 }
 
@@ -188,14 +207,77 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
     }
     case 1: // 处理检测框
     {
+        // 只有当检测到类别0时才输出详细日志
+        bool hasClass0 = false;
+        for (const auto& detection : detections) {
+            if (detection.class_id == 0) {
+                hasClass0 = true;
+                break;
+            }
+        }
+
+        if (hasClass0) {
+            // 调试：输出所有ROI信息
+            WriteLog(QString("[调试-ROI信息] 共有 %1 个ROI区域").arg(rois.size()));
+            for (const ROI& roi : rois) {
+                if (roi.id == 0) {  // 只输出类别0的ROI
+                    WriteLog(QString("[调试-ROI] orderId=%1 classId=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
+                        .arg(roi.orderId)
+                        .arg(roi.id)
+                        .arg(roi.area.x)
+                        .arg(roi.area.y)
+                        .arg(roi.area.width)
+                        .arg(roi.area.height));
+                }
+            }
+
+            // 调试：输出类别0的检测框信息
+            WriteLog(QString("[调试-检测框] 类别0的检测框:"));
+            for (size_t i = 0; i < detections.size(); i++) {
+                const auto& detection = detections[i];
+                if (detection.class_id == 0) {
+                    WriteLog(QString("  [检测框%1] state=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
+                        .arg(i)
+                        .arg(detection.state ? "有效" : "无效")
+                        .arg(detection.box.x)
+                        .arg(detection.box.y)
+                        .arg(detection.box.width)
+                        .arg(detection.box.height));
+                }
+            }
+
+            WriteLog(QString("[调试-阈值] IoU阈值 = %1 / 10 = %2")
+                .arg(referIouValue)
+                .arg(referIouValue / 10.0f));
+        }
+
         for (const auto& detection : detections) {
             for (const ROI& roi : rois) {
+                // 详细调试每次匹配
+                float iouValue = CalculateIoU(detection.box, roi.area);
+
+                // 只为类别0打印详细匹配日志
+                if (detection.class_id == 0 && roi.id == 0) {
+                    WriteLog(QString("[调试-匹配] 检测框 vs ROI(orderId=%1)")
+                        .arg(roi.orderId));
+                    WriteLog(QString("  - state有效: %1")
+                        .arg(detection.state ? "是" : "否"));
+                    WriteLog(QString("  - IoU: %1 > %2 ? %3")
+                        .arg(iouValue)
+                        .arg(referIouValue / 10.0f)
+                        .arg(iouValue > referIouValue / 10.0f ? "是" : "否"));
+                }
+
+
                 if (detection.class_id == roi.id && detection.state && CalculateIoU(detection.box, roi.area) > referIouValue / 10.0f) {
+                    WriteLog(QString(" 匹配成功！记录 orderId=%1").arg(roi.orderId));
                     detectedOrderIds.insert(roi.orderId);
                     break; // 同一个检测框只要在一个ROI中检测到就标记
                 }
+           
             }
         }
+        WriteLog("[调试-匹配结束] ---");
         break;
     }
     case 2: // 处理多边形点
@@ -240,6 +322,7 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
         // 更新检测状态
         roiDetectionHistory[orderId].pop_front();
         roiDetectionHistory[orderId].push_back(true);
+ 
 
         // 检查最近三帧中是否有任意2帧检测到
         bool anyDetectedInLastThreeFrames = false;
@@ -253,6 +336,7 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 }
             }
         }
+
 
         // 如果满足条件，并且是首次触发，则记录时间戳
         if (anyDetectedInLastThreeFrames) {
@@ -269,6 +353,8 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
             }
             // 记录首次出现
             //first_occurrences[orderId] = { orderId, orderId, timestamp, true };
+
+
         }
     }
 
@@ -281,4 +367,34 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
     }
 
     return 0;
+}
+
+void ImageActionOrderAlgorithm::WriteLog(const QString& message, LOGTYPE logType)
+{
+    if (ptrQueueNodeLogData != nullptr) {
+        std::pair<LOGTYPE, QString> p_log_info;
+        p_log_info.first = logType;
+        p_log_info.second = message;
+        ptrQueueNodeLogData->push(p_log_info);
+
+        // 2. 同时写入文件（持久化保存）
+        static QFile logFile("D:/action_order_debug.txt");
+        static bool fileOpened = false;
+
+        if (!fileOpened) {
+            if (logFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)) {
+                fileOpened = true;
+            }
+        }
+
+        if (fileOpened) {
+            QTextStream out(&logFile);
+            out.setCodec("UTF-8");  // 确保中文正常显示
+
+            // 添加时间戳
+            QString timestamp = QDateTime::currentDateTime().toString("hh:mm:ss.zzz");
+            out << "[" << timestamp << "] " << message << "\n";
+            out.flush();  // 立即刷新到磁盘
+        }
+    }
 }

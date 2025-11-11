@@ -133,7 +133,8 @@ void FramYoloV11Detect::InitialExserializeUi()
             if (ptrOutVMUnorderedMap != nullptr) {
                 ptrOutVMUnorderedMap->vmMap.clear();
             }
-            for (int i = 0; i < actionNum; ++i){
+            int validCount = qMin(qMin(actionNum, modelClassId.count()), modelClassName.count());
+            for (int i = 0; i < validCount; ++i){
                 qTableViewModel->setItem(i, 0, new QStandardItem(QString::number(i+1)));
                 qTableViewModel->setItem(i, 1, new QStandardItem(QString::number(modelClassId[i])));
                 qTableViewModel->setItem(i, 2, new QStandardItem(modelClassName[i]));

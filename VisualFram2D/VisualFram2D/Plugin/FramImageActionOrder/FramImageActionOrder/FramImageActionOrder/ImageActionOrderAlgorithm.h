@@ -2,6 +2,9 @@
 #include <opencv2/opencv.hpp>
 #include "SerializeStructParam.h"
 #include "PublicFunction.h"
+#include "GeneralStruct.h"
+#include <tbb/concurrent_queue.h> 
+
 
 struct ROI {
     int id;                //ROI的唯一标识符（如1, 2, 3）
@@ -44,6 +47,11 @@ public:
 
     void SetParam(const std::vector<ROI>&area);
 
+    // 日志
+    void SetLogQueue(std::shared_ptr<tbb::concurrent_queue<std::pair<LOGTYPE, QString>>> logQueue) {
+        ptrQueueNodeLogData = logQueue;
+    }
+
     int RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeState>& ptrOutVec, const DetectionResults& detections,
         uint64_t timestamp, float referIouValue);
 
@@ -53,8 +61,15 @@ public:
     //std::unordered_map<int, FirstActionEvent> first_occurrences;  // 各ROI的首次动作记录
     // 存储每个ROI最近三帧的检测状态（true=检测到，false=未检测到）
     std::unordered_map<int, std::deque<bool>> roiDetectionHistory;
+
+    
+
 private:
     std::vector<ROI>rois;
+
+    // 日志
+    std::shared_ptr<tbb::concurrent_queue<std::pair<LOGTYPE, QString>>> ptrQueueNodeLogData = nullptr;
+    void WriteLog(const QString& message, LOGTYPE logType = LOGTYPE::INFO);
  
 };
 

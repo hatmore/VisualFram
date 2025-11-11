@@ -117,6 +117,12 @@ int FramImageActionOrder::RunningTool()
     RUNNINGSTATE node_state = RUNNINGSTATE::RUNNING_SUCESS;
     float  elapsed_time = 0.0;
 
+    // 第一次运行时设置算法类的日志队列
+    static bool logQueueInitialized = false;
+    if (!logQueueInitialized) {
+        ptrImageActionOrderAlgorithm->SetLogQueue(toolNodeDataInteract->ptrQueueNodeLogData);
+        logQueueInitialized = true;
+    }
 
     std::pair<LOGTYPE, QString>log_qstr;
     log_qstr.first = LOGTYPE::INFO;

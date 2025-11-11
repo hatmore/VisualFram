@@ -9,9 +9,10 @@ struct FunctionParam {
     //动作总数
     int actionNum = 8;
     //类别总数
-    int classNum = 5;
+    int classNum = 2; // 5-》2
     //类别ID
-    QList<int> modelClassId = {0, 1, 2, 3, 4};
+    // QList<int> modelClassId = {0, 1, 2, 3, 4};
+    QList<int> modelClassId = {0, 1};
     //类别名称
     QStringList modelClassName;
     //模型存储路径

@@ -62,7 +62,8 @@ public:
     // 存储每个ROI最近三帧的检测状态（true=检测到，false=未检测到）
     std::unordered_map<int, std::deque<bool>> roiDetectionHistory;
 
-    
+    // 跟踪已记录的最高orderId，用于强制顺序检测
+    int highestRecordedOrderId = 0;
 
 private:
     std::vector<ROI>rois;

@@ -5,7 +5,7 @@ matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 中文
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 # 全局变量用于统计 OK 良率
-orderPredefined = [1, 2, 3, 4, 5, 6, 7, 8]
+orderPredefined = [1, 2, 3, 4, 5]
 ok_count = 0  # OK 次数
 total_count = 0  # 总运行次数
 yield_rate = 0  # 良率
@@ -86,7 +86,7 @@ class SOPReportCreate():
                     durationTime.append(time2)
 
         # 1、读取本地 CSV 文件中保存的数据，并判断数据是否更新
-        csv_file = f'G:/PengSiyao/TestData/sop_report_data_{today}.csv'
+        csv_file = f'D:/app/TestData/sop_report_data_{today}.csv'
         try:
             if os.path.exists(csv_file):
                 df_existing = pd.read_csv(csv_file, encoding='utf-8-sig')
@@ -134,7 +134,7 @@ class SOPReportCreate():
         global ok_count, total_count, yield_rate
 
         today = datetime.datetime.now().strftime('%Y-%m-%d')
-        csv_file = f'G:/PengSiyao/TestData/sop_report_data_{today}.csv'
+        csv_file = f'D:/app/TestData/sop_report_data_{today}.csv'
         # 保持统一长度
         max_length = max(len(labelOrder), len(labelDuration))
         data = {

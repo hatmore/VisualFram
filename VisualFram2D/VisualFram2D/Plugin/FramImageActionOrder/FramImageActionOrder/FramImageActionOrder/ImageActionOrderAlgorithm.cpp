@@ -4,6 +4,7 @@
 #include <QFile>         // 添加
 #include <QTextStream>   // 添加
 #include <QDateTime>     // 添加
+#include <algorithm>    // 添加
 
 
 ImageActionOrderAlgorithm::ImageActionOrderAlgorithm()
@@ -207,7 +208,7 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
     }
     case 1: // 处理检测框
     {
-        // 只有当检测到类别0时才输出详细日志
+        // 只为class 0打印详细匹配日志
         bool hasClass0 = false;
         for (const auto& detection : detections) {
             if (detection.class_id == 0) {
@@ -217,10 +218,10 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
         }
 
         if (hasClass0) {
-            // 调试：输出所有ROI信息
+            // 调试：打印所有ROI信息
             WriteLog(QString("[调试-ROI信息] 共有 %1 个ROI区域").arg(rois.size()));
             for (const ROI& roi : rois) {
-                if (roi.id == 0) {  // 只输出类别0的ROI
+                if (roi.id == 0) {
                     WriteLog(QString("[调试-ROI] orderId=%1 classId=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
                         .arg(roi.orderId)
                         .arg(roi.id)
@@ -231,12 +232,12 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 }
             }
 
-            // 调试：输出类别0的检测框信息
-            WriteLog(QString("[调试-检测框] 类别0的检测框:"));
+            // 调试：打印类0的检测信息
+            WriteLog(QString("[调试-检测] 类0的检测:"));
             for (size_t i = 0; i < detections.size(); i++) {
                 const auto& detection = detections[i];
                 if (detection.class_id == 0) {
-                    WriteLog(QString("  [检测框%1] state=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
+                    WriteLog(QString("  [检测%1] state=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
                         .arg(i)
                         .arg(detection.state ? "有效" : "无效")
                         .arg(detection.box.x)
@@ -249,35 +250,109 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
             WriteLog(QString("[调试-阈值] IoU阈值 = %1 / 10 = %2")
                 .arg(referIouValue)
                 .arg(referIouValue / 10.0f));
+
+            WriteLog(QString("[调试-当前进度] 当前已记录到动作 %1，下一个应该检测动作 %2")
+                .arg(highestRecordedOrderId)
+                .arg(highestRecordedOrderId + 1));
         }
 
+        // 为每个检测框找到所有匹配的ROI，但只选择符合顺序的
         for (const auto& detection : detections) {
+            // 存储当前检测框所有匹配的ROI及其IoU
+            struct RoiMatch {
+                int orderId;
+                float iou;
+            };
+            std::vector<RoiMatch> matches;
+
             for (const ROI& roi : rois) {
-                // 详细调试每次匹配
-                float iouValue = CalculateIoU(detection.box, roi.area);
+                if (detection.class_id == roi.id && detection.state) {
+                    float iouValue = CalculateIoU(detection.box, roi.area);
 
-                // 只为类别0打印详细匹配日志
-                if (detection.class_id == 0 && roi.id == 0) {
-                    WriteLog(QString("[调试-匹配] 检测框 vs ROI(orderId=%1)")
-                        .arg(roi.orderId));
-                    WriteLog(QString("  - state有效: %1")
-                        .arg(detection.state ? "是" : "否"));
-                    WriteLog(QString("  - IoU: %1 > %2 ? %3")
-                        .arg(iouValue)
-                        .arg(referIouValue / 10.0f)
-                        .arg(iouValue > referIouValue / 10.0f ? "是" : "否"));
+                    // 只为类0打印详细匹配日志
+                    if (detection.class_id == 0 && roi.id == 0) {
+                        WriteLog(QString("[调试-匹配] 检测 vs ROI(orderId=%1)")
+                            .arg(roi.orderId));
+                        WriteLog(QString("  - IoU: %1 > %2 ? %3")
+                            .arg(iouValue)
+                            .arg(referIouValue / 10.0f)
+                            .arg(iouValue > referIouValue / 10.0f ? "是" : "否"));
+                    }
+
+                    if (iouValue > referIouValue / 10.0f) {
+                        matches.push_back({ roi.orderId, iouValue });
+                    }
+                }
+            }
+
+            // 如果有多个匹配，只考虑下一个顺序的动作
+            if (!matches.empty()) {
+                // 1. 先查找所有ROI中最大的orderId（获取总动作数）
+                int maxOrderId = 0;
+                for (const ROI& roi : rois) {
+                    if (roi.orderId > maxOrderId) {
+                        maxOrderId = roi.orderId;
+                    }
                 }
 
+                //// 2. 检查是否需要重置（完成所有动作后重新开始）
+                //if (highestRecordedOrderId >= maxOrderId) {
+                //    // 检查matches中是否有orderId=1，如果有说明新一轮开始
+                //    auto it1 = std::find_if(matches.begin(), matches.end(),
+                //        [](const RoiMatch& match) {
+                //            return match.orderId == 1;
+                //        });
 
-                if (detection.class_id == roi.id && detection.state && CalculateIoU(detection.box, roi.area) > referIouValue / 10.0f) {
-                    WriteLog(QString(" 匹配成功！记录 orderId=%1").arg(roi.orderId));
-                    detectedOrderIds.insert(roi.orderId);
-                    break; // 同一个检测框只要在一个ROI中检测到就标记
+                //    if (it1 != matches.end()) {
+                //        // 重置为新一轮
+                //        highestRecordedOrderId = 0;
+
+                //        if (detection.class_id == 0) {
+                //            WriteLog(QString("  [自动重置] 检测完成所有%1个动作，重新开始新一轮").arg(maxOrderId));
+                //        }
+                //    }
+                //}
+
+                // 3. 现在才计算期待的orderId（此时highestRecordedOrderId可能已经被重置为0）
+                int nextExpectedOrderId = highestRecordedOrderId + 1;
+
+                // 4. 查找是否有符合顺序的匹配
+                auto it = std::find_if(matches.begin(), matches.end(),
+                    [nextExpectedOrderId](const RoiMatch& match) {
+                        return match.orderId == nextExpectedOrderId;
+                    });
+
+                if (it != matches.end()) {
+                    // 找到了下一个顺序的动作
+                    detectedOrderIds.insert(it->orderId);
+
+                    if (detection.class_id == 0) {
+                        WriteLog(QString("  检测到下一个顺序动作: orderId=%1 IoU=%2")
+                            .arg(it->orderId)
+                            .arg(it->iou));
+                    }
                 }
-           
+                else {
+                    // 没有找到下一个顺序的动作，记录被忽略的匹配
+                    if (detection.class_id == 0 && !matches.empty()) {
+                        QString ignoredList;
+                        for (const auto& match : matches) {
+                            ignoredList += QString("orderId=%1(IoU=%2) ")
+                                .arg(match.orderId)
+                                .arg(match.iou);
+                        }
+                        WriteLog(QString("  跳过非顺序匹配: %1 (期待orderId=%2, 最大orderId=%3)")
+                            .arg(ignoredList)
+                            .arg(nextExpectedOrderId)
+                            .arg(maxOrderId));
+                    }
+                }
             }
         }
-        WriteLog("[调试-匹配结束] ---");
+
+        if (hasClass0) {
+            WriteLog("----------------------------------------");
+        }
         break;
     }
     case 2: // 处理多边形点
@@ -351,6 +426,12 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 ptrOutVec->vmMap[orderId]->timeStamp = timestamp;
                 ptrOutVec->vmMap[orderId]->nodeState = true;
             }
+
+            // 更新已记录的最高orderId
+            if (orderId > highestRecordedOrderId) {
+                highestRecordedOrderId = orderId;
+            }
+
             // 记录首次出现
             //first_occurrences[orderId] = { orderId, orderId, timestamp, true };
 

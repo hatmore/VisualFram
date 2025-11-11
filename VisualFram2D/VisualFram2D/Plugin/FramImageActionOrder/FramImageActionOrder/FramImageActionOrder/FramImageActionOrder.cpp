@@ -188,6 +188,16 @@ int FramImageActionOrder::RunningTool()
                     }
                     outFile << " " << std::endl;
                     ptrOutVec->vmMap.clear();
+
+                    // 清除检测历史和重置顺序进度
+                    ptrImageActionOrderAlgorithm->roiDetectionHistory.clear();
+                    ptrImageActionOrderAlgorithm->highestRecordedOrderId = 0;
+
+                    // 添加日志
+                    std::pair<LOGTYPE, QString> log_clear;
+                    log_clear.first = LOGTYPE::INFO;
+                    log_clear.second = this->selfToolName + "--工件离开，清除历史数据，重置顺序检测";
+                    toolNodeDataInteract->ptrQueueNodeLogData->push(log_clear);
                 }
             }
         }

@@ -9,6 +9,7 @@
 #include"ROIActionTracker.h"
 
 std::unordered_map<int, ROIActionTracker::ActionState> ROIActionTracker::active_actions;
+std::mutex ROIActionTracker::logMutex;
 
 FramImageDuration::FramImageDuration(QWidget* parent)
     : ToolInterface(parent)
@@ -159,10 +160,18 @@ int FramImageDuration::RunningTool()
     std::vector<DetectedObject>Mymodel= ptrImageDurationAlgorithm->InitModel(ptrInNodeModelData, timestamp);
     //测试日志
     //this->toolNodeDataInteract->ptrQueueNodeLogData->push(std::make_pair(LOGTYPE::ERRORS, QString::number(timestamp)));
+    // 
     //初始化跟踪器
-    ROIActionTracker tracker(rois);
+    //ROIActionTracker tracker(rois);
 
-    int res=tracker.ProcessFrame(Mymodel,timestamp, MethodParam);
+    // 如果tracker不存在或ROI变化，重新创建
+    if (!ptrTracker) {
+        ptrTracker = std::make_shared<ROIActionTracker>(rois);
+    }
+
+    //int res=tracker.ProcessFrame(Mymodel,timestamp, MethodParam);
+    int res = ptrTracker->ProcessFrame(Mymodel, timestamp, MethodParam);
+
     if (res!= 0){
         RUNNINGSTATE node_state = RUNNINGSTATE::RUNNING_FAIL;
         if (isSelfRunring) {
@@ -175,7 +184,8 @@ int FramImageDuration::RunningTool()
     }
     //输出结果
     //auto result=tracker.CalculateDurations();
-    tracker.CalculateDurations(ptrOutVec);
+    //tracker.CalculateDurations(ptrOutVec);
+    ptrTracker->CalculateDurations(ptrOutVec);
 
     std::chrono::high_resolution_clock::time_point tp2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<size_t, std::nano> dur = tp2 - tp1;
@@ -195,6 +205,13 @@ int FramImageDuration::RunningTool()
                     }
                     outFile << " "  << std::endl;
                     ptrOutVec->vmMap.clear();
+
+                    // 重置顺序进度
+                    //tracker.highestRecordedOrderId = 0;//但tracker 是局部变量，todo:改成成员变量
+                    ptrTracker->highestRecordedOrderId = 0;
+                    ptrTracker->active_actions.clear();
+                    ptrTracker->roiDetectionHistory.clear();
+                    ptrTracker->anyDetectedInLastThreeFrames.clear();
                 }
             }
         }

@@ -22,10 +22,21 @@ std::vector<ROI>ImageDurationAlgorithm::InitRoi(PtrVMUnorderedMap<int, PtrVMVect
             VMRectangle vm_rect = vmVector->vmVector[j];
             ROI roi;
             roi.id = vmPair.first; //map的键值：类别
-            roi.area.x = vm_rect.centerPoint.x;
-            roi.area.y = vm_rect.centerPoint.y; // 确认是否需要注释中的代码
-            roi.area.width = vm_rect.width;
-            roi.area.height = vm_rect.height;
+
+            //roi.area.x = vm_rect.centerPoint.x;
+            //roi.area.y = vm_rect.centerPoint.y; // 确认是否需要注释中的代码
+            //roi.area.width = vm_rect.width;
+            //roi.area.height = vm_rect.height;
+            //roi.orderId = vm_rect.orderId;
+            //rois.push_back(roi);
+            // 处理负宽高的情况
+            float actualWidth = std::abs(vm_rect.width);
+            float actualHeight = std::abs(vm_rect.height);
+
+            roi.area.x = std::min(vm_rect.centerPoint.x, vm_rect.centerPoint.x + vm_rect.width);
+            roi.area.y = std::min(vm_rect.centerPoint.y, vm_rect.centerPoint.y + vm_rect.height);
+            roi.area.width = actualWidth;
+            roi.area.height = actualHeight;
             roi.orderId = vm_rect.orderId;
             rois.push_back(roi);
         }

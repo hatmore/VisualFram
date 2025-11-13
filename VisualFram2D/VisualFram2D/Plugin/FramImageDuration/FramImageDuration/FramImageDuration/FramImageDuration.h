@@ -4,6 +4,7 @@
 #include "ImageView/QGraphicsViews2d.h"
 #include"ImageDurationAlgorithm.h"
 #include "SerializeStructParam.h"
+#include "ROIActionTracker.h"
 #include"ui_FramImageDuration.h"
 
 
@@ -40,6 +41,9 @@ public:
     /// </summary>
     /// <returns></returns>
     virtual void ExserializeFunciton(const QJsonObject& json) override;
+
+    // tracker 改成成员变量
+    std::shared_ptr<ROIActionTracker> ptrTracker = nullptr;
 
 private:
     void Initial();

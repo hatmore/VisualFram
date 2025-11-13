@@ -5,6 +5,10 @@
 #include"ImageDurationAlgorithm.h"
 #include <unordered_set>
 
+#include <fstream>
+#include <mutex>
+#include <sstream>
+#include <iomanip>
 
 struct DurationRecord
 {
@@ -18,21 +22,21 @@ struct DurationRecord
     }
 };
 
-// 输出结构：ROI_ID -> 该ROI所有动作的持续时间记录
-std::unordered_map<int, std::vector<DurationRecord>> roi_durations;
-
-// 存储每个ROI最近三帧的检测状态（true=检测到，false=未检测到）
-std::unordered_map<int, std::deque<bool>> roiDetectionHistory;
-std::unordered_map<int, bool> anyDetectedInLastThreeFrames;
+//// 输出结构：ROI_ID -> 该ROI所有动作的持续时间记录
+//std::unordered_map<int, std::vector<DurationRecord>> roi_durations;
+//
+//// 存储每个ROI最近三帧的检测状态（true=检测到，false=未检测到）
+//std::unordered_map<int, std::deque<bool>> roiDetectionHistory;
+//std::unordered_map<int, bool> anyDetectedInLastThreeFrames;
 
 // 获取当前时间戳（毫秒）
-uint64_t GetCurrentTimestamp()
+inline uint64_t GetCurrentTimestamp()
 {
     using namespace std::chrono;
     return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
 }
 
-bool CalculateIoU(const cv::Rect& rect1, const cv::Rect& rect2,float ReferIou) 
+inline bool CalculateIoU(const cv::Rect& rect1, const cv::Rect& rect2,float ReferIou)
 {
     int x1 = std::max(rect1.x, rect2.x);
     int y1 = std::max(rect1.y, rect2.y);
@@ -67,13 +71,44 @@ private:
 public:
     static std::unordered_map<int, ActionState> active_actions;  // ROI_ID -> 当前状态
 
+    // 跟踪已记录过的最高orderId（用于强制顺序）
+    int highestRecordedOrderId = 0;
+
 
     std::vector<ROI> rois;  // 预定义的ROI列表
     
     std::unordered_map<int, std::vector<DurationRecord>> roi_durations;  // 结果存储
+    // 添加这两个成员变量：
+    std::unordered_map<int, std::deque<bool>> roiDetectionHistory;
+    std::unordered_map<int, bool> anyDetectedInLastThreeFrames;
 
 public:
     //PtrVMUnorderedMap<int, PtrVMNodeState> result { nullptr };
+
+    // 日志文件路径
+    std::string logFilePath = "D:/app/TestData/ROIDebugLog.txt";
+    static std::mutex logMutex;  // 保证线程安全
+
+    // 日志输出函数
+    void WriteLog(const std::string& message) {
+        std::lock_guard<std::mutex> lock(logMutex);
+        std::ofstream logFile(logFilePath, std::ios::app);
+        if (logFile.is_open()) {
+            // 添加时间戳
+            auto now = std::chrono::system_clock::now();
+            auto time_t = std::chrono::system_clock::to_time_t(now);
+            auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                now.time_since_epoch()) % 1000;
+
+            std::tm tm;
+            localtime_s(&tm, &time_t);
+
+            logFile << std::put_time(&tm, "%H:%M:%S")
+                << "." << std::setfill('0') << std::setw(3) << ms.count()
+                << " - " << message << std::endl;
+            logFile.close();
+        }
+    }
 
 public:
 
@@ -150,6 +185,31 @@ public:
             break;
         }
 
+        // ====== 新增：顺序强制逻辑 ======
+        // 1. 获取所有ROI中最大的orderId
+        int maxOrderId = 0;
+        for (const ROI& roi : rois) {
+            if (roi.orderId > maxOrderId) {
+                maxOrderId = roi.orderId;
+            }
+        }
+
+        //// 2. 计算下一个期望的orderId
+        //int nextExpectedOrderId = highestRecordedOrderId + 1;
+
+        //// 3. 只保留符合顺序的检测
+        //std::unordered_set<int> filtered_detected_roi_order_ids;
+        //for (int orderId : detected_roi_order_ids) {
+        //    if (orderId == nextExpectedOrderId) {
+        //        filtered_detected_roi_order_ids.insert(orderId);
+        //        break; // 只处理下一个顺序的动作
+        //    }
+        //}
+
+        //// 4. 用过滤后的结果替换原始检测结果
+        //detected_roi_order_ids = filtered_detected_roi_order_ids;
+        // ====== 顺序强制逻辑结束 ======
+
         // 更新每个orderId的最近三帧检测状态
         for (int orderId : detected_roi_order_ids) {
             // 初始化检测历史（如果不存在）
@@ -183,23 +243,58 @@ public:
                 // 情况1: 该 ROI 当前帧有目标
                 if (!state.is_active) {
                     if (anyDetectedInLastThreeFrames[roi.orderId]) {
-                        // 新动作开始，记录开始时间
-                        state = { true, timestamp, 0 };
+                        // 新增：检查是否符合顺序
+                        int nextExpectedOrderId = highestRecordedOrderId + 1;
+
+                        // 添加调试日志
+                        std::ostringstream oss;
+                        oss << "检测到动作 " << roi.orderId
+                            << ", 期望的是 " << nextExpectedOrderId
+                            << ", 当前highest=" << highestRecordedOrderId;
+                        WriteLog(oss.str());
+
+                        if (roi.orderId == nextExpectedOrderId) {
+                            // 符合顺序，开始记录
+                            state = { true, timestamp, 0 };
+
+                            // 立即更新已记录的最高orderId
+                            highestRecordedOrderId = roi.orderId;
+
+                            // 添加调试日志
+                            std::ostringstream oss2;
+                            oss2 << "开始记录动作 " << roi.orderId
+                                << ", 更新highest=" << highestRecordedOrderId;
+                            WriteLog(oss2.str());
+                        }
+                        else {
+                            // 添加调试日志
+                            std::ostringstream oss3;
+                            oss3 << "跳过动作 " << roi.orderId << " (不符合顺序)";
+                            WriteLog(oss3.str());
+                        }
                     }
                 }
                 else {
-                    // 动作持续，重置丢失计数
+                    // 持续检测，重置丢失计数
                     state.miss_count = 0;
                 }
             }
             else if (state.is_active) {
                 // 情况2: 该 ROI 当前帧无目标但之前有动作
                 if (state.miss_count >= frame.MaxMissFrames) {
+
+                    // 添加调试日志
+                    std::ostringstream oss;
+                    oss << "动作 " << roi.orderId
+                        << " 结束，记录持续时间 " << (timestamp - state.start_time) << " ms";
+                    WriteLog(oss.str());
+
                     // 动作结束: 保存持续时间记录
                     roi_durations[roi.orderId].push_back(DurationRecord{
                         state.start_time,
                         static_cast<uint64_t>(timestamp /*- state.miss_count * frame.VideoFps*/)
                         });
+
                     state = ActionState{};
                 }
                 else {

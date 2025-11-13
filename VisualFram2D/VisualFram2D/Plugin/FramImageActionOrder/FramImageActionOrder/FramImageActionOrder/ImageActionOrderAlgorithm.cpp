@@ -57,7 +57,7 @@ std::vector<ROI>ImageActionOrderAlgorithm::InitRoi(PtrVMUnorderedMap<int, PtrVMV
             roi.id = vmPair.first; //map的键值：类别
 
             //roi.area.x = vm_rect.centerPoint.x;
-            //roi.area.y = vm_rect.centerPoint.y; // 确认是否需要注释中的代码
+            //roi.area.y = vm_rect.centerPoint.y; 
             //roi.area.width = vm_rect.width;
             //roi.area.height = vm_rect.height;
             //roi.orderId = vm_rect.orderId;
@@ -208,53 +208,50 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
     }
     case 1: // 处理检测框
     {
-        // 只为class 0打印详细匹配日志
-        bool hasClass0 = false;
-        for (const auto& detection : detections) {
-            if (detection.class_id == 0) {
-                hasClass0 = true;
-                break;
-            }
-        }
+        //// 只为class 0打印详细匹配日志
+        //bool hasClass0 = false;
+        //for (const auto& detection : detections) {
+        //    if (detection.class_id == 0) {
+        //        hasClass0 = true;
+        //        break;
+        //    }
+        //}
+        //if (hasClass0) {
+        //    // 调试：打印所有ROI信息
+        //    WriteLog(QString("[调试-ROI信息] 共有 %1 个ROI区域").arg(rois.size()));
+        //    for (const ROI& roi : rois) {
+        //        if (roi.id == 0) {
+        //            WriteLog(QString("[调试-ROI] orderId=%1 classId=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
+        //                .arg(roi.orderId)
+        //                .arg(roi.id)
+        //                .arg(roi.area.x)
+        //                .arg(roi.area.y)
+        //                .arg(roi.area.width)
+        //                .arg(roi.area.height));
+        //        }
+        //    }
+        //    // 调试：打印类0的检测信息
+        //    WriteLog(QString("[调试-检测] 类0的检测:"));
+        //    for (size_t i = 0; i < detections.size(); i++) {
+        //        const auto& detection = detections[i];
+        //        if (detection.class_id == 0) {
+        //            WriteLog(QString("  [检测%1] state=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
+        //                .arg(i)
+        //                .arg(detection.state ? "有效" : "无效")
+        //                .arg(detection.box.x)
+        //                .arg(detection.box.y)
+        //                .arg(detection.box.width)
+        //                .arg(detection.box.height));
+        //        }
+        //    }
+        //    WriteLog(QString("[调试-阈值] IoU阈值 = %1 / 10 = %2")
+        //        .arg(referIouValue)
+        //        .arg(referIouValue / 10.0f));
 
-        if (hasClass0) {
-            // 调试：打印所有ROI信息
-            WriteLog(QString("[调试-ROI信息] 共有 %1 个ROI区域").arg(rois.size()));
-            for (const ROI& roi : rois) {
-                if (roi.id == 0) {
-                    WriteLog(QString("[调试-ROI] orderId=%1 classId=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
-                        .arg(roi.orderId)
-                        .arg(roi.id)
-                        .arg(roi.area.x)
-                        .arg(roi.area.y)
-                        .arg(roi.area.width)
-                        .arg(roi.area.height));
-                }
-            }
-
-            // 调试：打印类0的检测信息
-            WriteLog(QString("[调试-检测] 类0的检测:"));
-            for (size_t i = 0; i < detections.size(); i++) {
-                const auto& detection = detections[i];
-                if (detection.class_id == 0) {
-                    WriteLog(QString("  [检测%1] state=%2 位置=(x:%3, y:%4, w:%5, h:%6)")
-                        .arg(i)
-                        .arg(detection.state ? "有效" : "无效")
-                        .arg(detection.box.x)
-                        .arg(detection.box.y)
-                        .arg(detection.box.width)
-                        .arg(detection.box.height));
-                }
-            }
-
-            WriteLog(QString("[调试-阈值] IoU阈值 = %1 / 10 = %2")
-                .arg(referIouValue)
-                .arg(referIouValue / 10.0f));
-
-            WriteLog(QString("[调试-当前进度] 当前已记录到动作 %1，下一个应该检测动作 %2")
-                .arg(highestRecordedOrderId)
-                .arg(highestRecordedOrderId + 1));
-        }
+        //    WriteLog(QString("[调试-当前进度] 当前已记录到动作 %1，下一个应该检测动作 %2")
+        //        .arg(highestRecordedOrderId)
+        //        .arg(highestRecordedOrderId + 1));
+        //}
 
         // 为每个检测框找到所有匹配的ROI，但只选择符合顺序的
         for (const auto& detection : detections) {
@@ -269,15 +266,15 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 if (detection.class_id == roi.id && detection.state) {
                     float iouValue = CalculateIoU(detection.box, roi.area);
 
-                    // 只为类0打印详细匹配日志
-                    if (detection.class_id == 0 && roi.id == 0) {
-                        WriteLog(QString("[调试-匹配] 检测 vs ROI(orderId=%1)")
-                            .arg(roi.orderId));
-                        WriteLog(QString("  - IoU: %1 > %2 ? %3")
-                            .arg(iouValue)
-                            .arg(referIouValue / 10.0f)
-                            .arg(iouValue > referIouValue / 10.0f ? "是" : "否"));
-                    }
+                    //// 只为类0打印详细匹配日志
+                    //if (detection.class_id == 0 && roi.id == 0) {
+                    //    WriteLog(QString("[调试-匹配] 检测 vs ROI(orderId=%1)")
+                    //        .arg(roi.orderId));
+                    //    WriteLog(QString("  - IoU: %1 > %2 ? %3")
+                    //        .arg(iouValue)
+                    //        .arg(referIouValue / 10.0f)
+                    //        .arg(iouValue > referIouValue / 10.0f ? "是" : "否"));
+                    //}
 
                     if (iouValue > referIouValue / 10.0f) {
                         matches.push_back({ roi.orderId, iouValue });
@@ -295,23 +292,6 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                     }
                 }
 
-                //// 2. 检查是否需要重置（完成所有动作后重新开始）
-                //if (highestRecordedOrderId >= maxOrderId) {
-                //    // 检查matches中是否有orderId=1，如果有说明新一轮开始
-                //    auto it1 = std::find_if(matches.begin(), matches.end(),
-                //        [](const RoiMatch& match) {
-                //            return match.orderId == 1;
-                //        });
-
-                //    if (it1 != matches.end()) {
-                //        // 重置为新一轮
-                //        highestRecordedOrderId = 0;
-
-                //        if (detection.class_id == 0) {
-                //            WriteLog(QString("  [自动重置] 检测完成所有%1个动作，重新开始新一轮").arg(maxOrderId));
-                //        }
-                //    }
-                //}
 
                 // 3. 现在才计算期待的orderId（此时highestRecordedOrderId可能已经被重置为0）
                 int nextExpectedOrderId = highestRecordedOrderId + 1;
@@ -349,10 +329,9 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 }
             }
         }
-
-        if (hasClass0) {
-            WriteLog("----------------------------------------");
-        }
+        //if (hasClass0) {
+        //    WriteLog("----------------------------------------");
+        //}
         break;
     }
     case 2: // 处理多边形点

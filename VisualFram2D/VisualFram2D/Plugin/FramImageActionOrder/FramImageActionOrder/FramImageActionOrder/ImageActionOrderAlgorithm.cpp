@@ -293,10 +293,10 @@ int ImageActionOrderAlgorithm::RunProcessFrame(PtrVMUnorderedMap<int, PtrVMNodeS
                 }
 
 
-                // 3. 现在才计算期待的orderId（此时highestRecordedOrderId可能已经被重置为0）
+                // 2. 计算期待的orderId（此时highestRecordedOrderId可能已经被重置为0）
                 int nextExpectedOrderId = highestRecordedOrderId + 1;
 
-                // 4. 查找是否有符合顺序的匹配
+                // 3. 查找是否有符合顺序的匹配
                 auto it = std::find_if(matches.begin(), matches.end(),
                     [nextExpectedOrderId](const RoiMatch& match) {
                         return match.orderId == nextExpectedOrderId;
@@ -438,7 +438,7 @@ void ImageActionOrderAlgorithm::WriteLog(const QString& message, LOGTYPE logType
         ptrQueueNodeLogData->push(p_log_info);
 
         // 2. 同时写入文件（持久化保存）
-        static QFile logFile("D:/action_order_debug.txt");
+        static QFile logFile("D:/app/TestData/action_order_debug.txt");
         static bool fileOpened = false;
 
         if (!fileOpened) {

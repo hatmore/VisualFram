@@ -201,7 +201,10 @@ int FramImageDuration::RunningTool()
                 if (ptrOutVec->vmMap.size() > 0) {
                     std::ofstream outFile("D:/app/TestData/DurationOutput.txt", std::ios::app);
                     for (auto& [orderId, vmp] : ptrOutVec->vmMap) {
-                        outFile << "类别ID: " << orderId << "     持续时间: " << vmp->timeStamp << std::endl;
+                        if (vmp != nullptr) {
+                            outFile << "类别ID: " << orderId << "     持续时间: " << vmp->timeStamp << std::endl;
+                        }
+                        //outFile << "类别ID: " << orderId << "     持续时间: " << vmp->timeStamp << std::endl;
                     }
                     outFile << " "  << std::endl;
                     ptrOutVec->vmMap.clear();
@@ -212,6 +215,7 @@ int FramImageDuration::RunningTool()
                     ptrTracker->active_actions.clear();
                     ptrTracker->roiDetectionHistory.clear();
                     ptrTracker->anyDetectedInLastThreeFrames.clear();
+                    ptrTracker->roi_durations.clear(); //清空持续时间累积记录
                 }
             }
         }

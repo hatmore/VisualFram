@@ -226,7 +226,7 @@ class SOPReportCreate():
                 label_angle = np.deg2rad(360 - (start_angle + angles[i] / 2))
                 x = 0.5 + 0.45 * np.cos(label_angle)
                 y = 0.5 + 0.45 * np.sin(label_angle)
-                ax_ring.text(x, y, f'打螺丝 {action_id}', fontproperties=font,
+                ax_ring.text(x, y, f'拧紧 {action_id}', fontproperties=font,
                              fontsize=title_font_size * 0.9, color='white', ha='center', va='center')
             # 添加右下角图例
             legend_y_start = 0.6  # 图例起始 y 坐标（右上角）
@@ -236,7 +236,7 @@ class SOPReportCreate():
                 rect = Rectangle((0.35, y_pos), 0.02, 0.03, transform=axs[0].transAxes,
                                  facecolor=color, edgecolor='white', linewidth=0.5, zorder=3)
                 axs[0].add_patch(rect)
-                axs[0].text(0.39, y_pos + 0.015, f'打螺丝{action_id}:{time}', transform=axs[0].transAxes,
+                axs[0].text(0.39, y_pos + 0.015, f'拧紧{action_id}:{time}', transform=axs[0].transAxes,
                             fontproperties=font, fontsize=label_font_size * 0.8, color='white',
                             ha='left', va='center', zorder=5)
             ax_ring.axis('off')

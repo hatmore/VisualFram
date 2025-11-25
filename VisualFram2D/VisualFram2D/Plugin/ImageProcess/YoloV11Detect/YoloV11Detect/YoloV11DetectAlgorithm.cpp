@@ -44,6 +44,10 @@ int YoloV11DetectAlgorithm::RunYoloV11Detect(const cv::Mat& src, const YoloDetec
         Detection currentDetection = inferenceResult[j];
 
         int currentClassId = currentDetection.classId;
+        // 添加这两行：检查 key 是否存在，不存在则初始化
+        if (yoloV11ResultVMUnorderedMap->vmMap.find(currentClassId) == yoloV11ResultVMUnorderedMap->vmMap.end()) {
+            yoloV11ResultVMUnorderedMap->vmMap[currentClassId] = std::make_shared<VMVector<PtrVMRectangle>>();
+        }
         if (yoloV11ResultVMUnorderedMap->vmMap[currentClassId]->vmVector.size() <= classIdCount[currentClassId]) {
             auto vmRectangle = std::make_shared <VMRectangle >();
             yoloV11ResultVMUnorderedMap->vmMap[currentClassId]->vmVector.push_back(vmRectangle);

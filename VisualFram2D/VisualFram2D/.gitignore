@@ -6,9 +6,6 @@ Debug/
 Release/
 
 # Visual Studio files
-*.sln
-*.vcxproj
-*.vcxproj.filters
 *.vcxproj.user
 .vs/
 

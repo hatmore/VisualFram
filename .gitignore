@@ -1,4 +1,4 @@
-# Visual Studio 2019 build results
+# Visual Studio build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -14,51 +14,51 @@ bld/
 [Ll]og/
 [Ll]ogs/
 Build/
+plugins/
 
-# Visual Studio cache/options
+# Visual Studio / IDE cache
 .vs/
-
-# Visual Studio Code cache/options
 .vscode/
-
-# User-specific files
+.idea/
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.VC.db
+*.VC.opendb
+*.aps
 
-# Build results
-*.exe
-*.dll
-*.lib
+# Qt generated files
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+.qmake.stash
+*.pro.user
+
+# Build artefacts
+*.obj
 *.pdb
 *.ilk
-*.map
+*.idb
 *.exp
-
-# Temporary files
+*.tlog
 *.tmp
 *.temp
 *.log
-
-# IDE files
-.idea/
 *.swp
 *.swo
-*.opendb
-*.db
 
 # OS files
 .DS_Store
 Thumbs.db
+nul
 
 # Python cache
 __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Windows reserved filenames
-nul
+# Local notes not meant for the repo
 /工具集节点详细分析.md
 /逻辑判断节点的工作机制.md
